@@ -25,7 +25,9 @@ public class Administradores extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jblTitulo = new javax.swing.JLabel();
+        btnMostarTitulo = new javax.swing.JButton();
+        btnOcultarTitulo1 = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -41,8 +43,26 @@ public class Administradores extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jLabel1.setText("Administradores");
+        jblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jblTitulo.setText("Administradores");
+
+        btnMostarTitulo.setBackground(new java.awt.Color(204, 204, 204));
+        btnMostarTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnMostarTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ojoAbierto.png"))); // NOI18N
+        btnMostarTitulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostarTituloActionPerformed(evt);
+            }
+        });
+
+        btnOcultarTitulo1.setBackground(new java.awt.Color(204, 204, 204));
+        btnOcultarTitulo1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnOcultarTitulo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ojoCerrado.png"))); // NOI18N
+        btnOcultarTitulo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOcultarTitulo1ActionPerformed(evt);
+            }
+        });
 
         btnAtras.setBackground(new java.awt.Color(204, 204, 204));
         btnAtras.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -57,24 +77,34 @@ public class Administradores extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(293, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(299, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34))
+                        .addGap(36, 36, 36))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(271, 271, 271))))
+                        .addComponent(jblTitulo)
+                        .addGap(265, 265, 265))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(371, 371, 371)
+                .addComponent(btnMostarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnOcultarTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(31, 31, 31)
                 .addComponent(btnAtras)
-                .addGap(201, 201, 201)
-                .addComponent(jLabel1)
-                .addContainerGap(346, Short.MAX_VALUE))
+                .addGap(151, 151, 151)
+                .addComponent(jblTitulo)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnMostarTitulo)
+                    .addComponent(btnOcultarTitulo1))
+                .addContainerGap(327, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Inicio");
@@ -157,6 +187,14 @@ public class Administradores extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnAdmIrRegistroActionPerformed
 
+    private void btnMostarTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostarTituloActionPerformed
+        jblTitulo.setVisible(true);
+    }//GEN-LAST:event_btnMostarTituloActionPerformed
+
+    private void btnOcultarTitulo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOcultarTitulo1ActionPerformed
+        jblTitulo.setVisible(false);
+    }//GEN-LAST:event_btnOcultarTitulo1ActionPerformed
+
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
         Datos.getLogin().setVisible(true);
         this.dispose();
@@ -203,7 +241,8 @@ public class Administradores extends javax.swing.JFrame {
     private javax.swing.JMenuItem btnAdmIrInicioSesion;
     private javax.swing.JMenuItem btnAdmIrRegistro;
     private javax.swing.JButton btnAtras;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnMostarTitulo;
+    private javax.swing.JButton btnOcultarTitulo1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -213,5 +252,6 @@ public class Administradores extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jblTitulo;
     // End of variables declaration//GEN-END:variables
 }

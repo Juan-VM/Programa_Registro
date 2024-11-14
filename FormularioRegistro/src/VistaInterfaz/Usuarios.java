@@ -27,8 +27,10 @@ public class Usuarios extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jblTituloUsuario = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
+        btnVerTitulo = new javax.swing.JButton();
+        btnOcultarTitulo = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         btnUserIrInicio = new javax.swing.JMenuItem();
@@ -38,8 +40,8 @@ public class Usuarios extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jLabel1.setText("Usuarios");
+        jblTituloUsuario.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jblTituloUsuario.setText("Usuarios");
 
         btnAtras.setBackground(new java.awt.Color(204, 204, 204));
         btnAtras.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -50,27 +52,54 @@ public class Usuarios extends javax.swing.JFrame {
             }
         });
 
+        btnVerTitulo.setBackground(new java.awt.Color(204, 204, 204));
+        btnVerTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnVerTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ojoAbierto.png"))); // NOI18N
+        btnVerTitulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerTituloActionPerformed(evt);
+            }
+        });
+
+        btnOcultarTitulo.setBackground(new java.awt.Color(204, 204, 204));
+        btnOcultarTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnOcultarTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ojoCerrado.png"))); // NOI18N
+        btnOcultarTitulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOcultarTituloActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(359, 359, 359)
-                .addComponent(jLabel1)
-                .addContainerGap(370, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(381, 381, 381)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jblTituloUsuario)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnVerTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnOcultarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(348, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(btnAtras)
-                .addGap(208, 208, 208)
-                .addComponent(jLabel1)
-                .addContainerGap(336, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
+                .addComponent(jblTituloUsuario)
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnVerTitulo)
+                    .addComponent(btnOcultarTitulo))
+                .addGap(269, 269, 269))
         );
 
         jMenu1.setText("Inicio");
@@ -140,6 +169,14 @@ public class Usuarios extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnAtrasActionPerformed
 
+    private void btnVerTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerTituloActionPerformed
+        jblTituloUsuario.setVisible(true);
+    }//GEN-LAST:event_btnVerTituloActionPerformed
+
+    private void btnOcultarTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOcultarTituloActionPerformed
+        jblTituloUsuario.setVisible(false);
+    }//GEN-LAST:event_btnOcultarTituloActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -177,13 +214,15 @@ public class Usuarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
+    private javax.swing.JButton btnOcultarTitulo;
     private javax.swing.JMenuItem btnUserIrInicio;
     private javax.swing.JMenuItem btnUserIrInicioSesion;
     private javax.swing.JMenuItem btnUserIrRegistro;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnVerTitulo;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jblTituloUsuario;
     // End of variables declaration//GEN-END:variables
 }
