@@ -94,7 +94,7 @@ public class PruebaMerchGitHub extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         Datos.getLogin().setVisible(true);
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
