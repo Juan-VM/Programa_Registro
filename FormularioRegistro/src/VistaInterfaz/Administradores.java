@@ -29,6 +29,7 @@ public class Administradores extends javax.swing.JFrame {
         btnMostarTitulo = new javax.swing.JButton();
         btnOcultarTitulo1 = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
+        btnVentanaPrueba = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         btnAdmIrInicio = new javax.swing.JMenuItem();
@@ -73,6 +74,16 @@ public class Administradores extends javax.swing.JFrame {
             }
         });
 
+        btnVentanaPrueba.setBackground(new java.awt.Color(204, 204, 204));
+        btnVentanaPrueba.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnVentanaPrueba.setForeground(new java.awt.Color(0, 0, 0));
+        btnVentanaPrueba.setText("Ver ventana prueba");
+        btnVentanaPrueba.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVentanaPruebaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -88,9 +99,12 @@ public class Administradores extends javax.swing.JFrame {
                         .addGap(265, 265, 265))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(371, 371, 371)
-                .addComponent(btnMostarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnOcultarTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnVentanaPrueba, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnMostarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnOcultarTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -104,7 +118,9 @@ public class Administradores extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnMostarTitulo)
                     .addComponent(btnOcultarTitulo1))
-                .addContainerGap(327, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addComponent(btnVentanaPrueba, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(213, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Inicio");
@@ -199,6 +215,11 @@ public class Administradores extends javax.swing.JFrame {
         Datos.getLogin().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAtrasActionPerformed
+
+    private void btnVentanaPruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentanaPruebaActionPerformed
+        Datos.getVentanaPrueba().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVentanaPruebaActionPerformed
     
     
     /**
@@ -243,6 +264,7 @@ public class Administradores extends javax.swing.JFrame {
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnMostarTitulo;
     private javax.swing.JButton btnOcultarTitulo1;
+    private javax.swing.JButton btnVentanaPrueba;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
