@@ -9,7 +9,7 @@ public class Personas {
     private String cedula;
     private int rol;
     private String password;
-
+    
     public Personas(String nombre, String apellido, String telefono, String cedula, String password, int rol) {
         this.nombre = nombre;
         this.apellido = apellido;
