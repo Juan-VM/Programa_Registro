@@ -10,6 +10,7 @@ public class Personas {
     private int rol;
     private String password;
     String ramaJuan;
+    String nuevoIntento;
 
     public Personas(String nombre, String apellido, String telefono, String cedula, String password, int rol) {
         this.nombre = nombre;
