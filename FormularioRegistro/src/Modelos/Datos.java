@@ -5,6 +5,7 @@ import Modelos.Personas;
 import VistaInterfaz.Administradores;
 import VistaInterfaz.Inicio;
 import VistaInterfaz.Login;
+import VistaInterfaz.PruebaMerchGitHub;
 import VistaInterfaz.Registro;
 import VistaInterfaz.Usuarios;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class Datos {
    public static Login login = new Login();
    public static Inicio start = new Inicio();
    public static Usuarios users = new Usuarios();
+   public static PruebaMerchGitHub ventanaPrueba = new PruebaMerchGitHub();
 
     public static Usuarios getUsers() {
         return users;
@@ -66,6 +68,10 @@ public class Datos {
 
     public static void setStart(Inicio start) {
         Datos.start = start;
+    }
+
+    public static PruebaMerchGitHub getVentanaPrueba() {
+        return ventanaPrueba;
     }
    
    
