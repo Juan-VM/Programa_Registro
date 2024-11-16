@@ -93,9 +93,9 @@ public class PruebaMerchGitHub extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        Datos.getLogin().setVisible(true);
+        Loggin loggin = new Loggin();
         this.setVisible(false);
-
+        loggin.setVisible(true);
     }//GEN-LAST:event_btnVolverActionPerformed
 
     /**

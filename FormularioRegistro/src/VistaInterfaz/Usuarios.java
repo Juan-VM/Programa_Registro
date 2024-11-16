@@ -160,13 +160,15 @@ public class Usuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUserIrRegistroActionPerformed
 
     private void btnUserIrInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserIrInicioSesionActionPerformed
-        Datos.getLogin().setVisible(true);
+        Loggin loggin = new Loggin();
         this.dispose();
+        loggin.setVisible(true);
     }//GEN-LAST:event_btnUserIrInicioSesionActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        Datos.getLogin().setVisible(true);
+        Loggin loggin = new Loggin();
         this.dispose();
+        loggin.setVisible(true);
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void btnVerTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerTituloActionPerformed

@@ -194,8 +194,9 @@ public class Administradores extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAdmIrInicioActionPerformed
 
     private void btnAdmIrInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdmIrInicioSesionActionPerformed
-        Datos.getLogin().setVisible(true);
+        Loggin loggin = new Loggin();
         this.dispose();
+        loggin.setVisible(true);
     }//GEN-LAST:event_btnAdmIrInicioSesionActionPerformed
 
     private void btnAdmIrRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdmIrRegistroActionPerformed
@@ -212,8 +213,10 @@ public class Administradores extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOcultarTitulo1ActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        Datos.getLogin().setVisible(true);
+        Loggin loggin = new Loggin();
         this.dispose();
+        loggin.setVisible(true);
+        
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void btnVentanaPruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentanaPruebaActionPerformed

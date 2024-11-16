@@ -9,8 +9,7 @@ import Modelos.Datos;
  */
 public class Inicio extends javax.swing.JFrame {
 
-   private Registro registro;
-   private Login login;
+    Loggin loggin;
     
     public Inicio() {
         initComponents();
@@ -132,11 +131,9 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistroBActionPerformed
 
     private void btnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioSesionActionPerformed
-
-        // Hacemos visible a la ventana login intanciada en esta clase.
-        Datos.getLogin().setVisible(true);
-        // Y ocultamos "esta" ventana (Inicio).
+        Loggin loggin = new Loggin();
         this.dispose();
+        loggin.setVisible(true);
     }//GEN-LAST:event_btnInicioSesionActionPerformed
 
     
