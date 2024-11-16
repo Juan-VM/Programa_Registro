@@ -4,6 +4,7 @@ package Modelos;
 import Modelos.Personas;
 import VistaInterfaz.Administradores;
 import VistaInterfaz.Inicio;
+import VistaInterfaz.Loggin;
 import VistaInterfaz.Login;
 import VistaInterfaz.PruebaMerchGitHub;
 import VistaInterfaz.Registro;
@@ -13,11 +14,11 @@ import java.util.ArrayList;
 
 public class Datos {
    
-    
+   public static Login login = new Login();
    public static ArrayList<Personas> listaPersonas = new ArrayList<Personas>();
    public static Administradores admins = new Administradores();
    public static Registro registro = new Registro();
-   public static Login login = new Login();
+   public static Loggin loggin = new Loggin();
    public static Inicio start = new Inicio();
    public static Usuarios users = new Usuarios();
    public static PruebaMerchGitHub ventanaPrueba = new PruebaMerchGitHub();
@@ -72,6 +73,10 @@ public class Datos {
 
     public static PruebaMerchGitHub getVentanaPrueba() {
         return ventanaPrueba;
+    }
+
+    public static Loggin getLoggin() {
+        return loggin;
     }
    
    
