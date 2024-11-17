@@ -4,12 +4,17 @@ import Modelos.Datos;
 import Modelos.Personas;
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 
 public class Administradores extends javax.swing.JFrame {
 
     int indice = Datos.indiceLogin;
-    boolean verPassword = false;
+    boolean verPassword = false; // Valida si se muestra o no el password en caracteres
+    
+    //Estado de la ventana clikeada por ultima vez.
+    boolean dashboardClickedNow = false; 
+    boolean retirarClickedNow = false;
 
     public Administradores() {
         initComponents();
@@ -27,7 +32,8 @@ public class Administradores extends javax.swing.JFrame {
         }
 
     }
-
+    
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,26 +44,32 @@ public class Administradores extends javax.swing.JFrame {
     private void initComponents() {
 
         background = new javax.swing.JPanel();
-        panel = new javax.swing.JPanel();
+        panelOpciones = new javax.swing.JPanel();
         jblPerfil = new javax.swing.JLabel();
         jblNombrePerfil = new javax.swing.JLabel();
+        panelSalir = new javax.swing.JPanel();
+        jblSalir = new javax.swing.JLabel();
         panelConfig = new javax.swing.JPanel();
         jblConfig = new javax.swing.JLabel();
         jblFondoPerfil = new javax.swing.JLabel();
         panelDashboard = new javax.swing.JPanel();
         jblDashboard = new javax.swing.JLabel();
-        panelDepositar = new javax.swing.JPanel();
-        jblDepositar = new javax.swing.JLabel();
+        panelRetirar = new javax.swing.JPanel();
+        jblRetirar = new javax.swing.JLabel();
         iconBarra = new javax.swing.JLabel();
         jblVentanaActual = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jblNombreBanco = new javax.swing.JLabel();
+        panelAtras = new javax.swing.JPanel();
+        jblAtras = new javax.swing.JLabel();
         jblBarra = new javax.swing.JLabel();
         tbdPizarra = new javax.swing.JTabbedPane();
         panelDashboardOp = new javax.swing.JPanel();
-        jblVer = new javax.swing.JLabel();
         panelInfoSorteo = new javax.swing.JPanel();
-        jblMasInfo = new javax.swing.JLabel();
-        jblMarco1 = new javax.swing.JLabel();
+        jblMasInfo1 = new javax.swing.JLabel();
+        panelInfo2 = new javax.swing.JPanel();
+        jblMasInfo2 = new javax.swing.JLabel();
+        jblMarcoInformativo2 = new javax.swing.JLabel();
+        jblMarcoInformativo1 = new javax.swing.JLabel();
         panelDepositarOp = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         panelSorteo = new javax.swing.JPanel();
@@ -84,6 +96,7 @@ public class Administradores extends javax.swing.JFrame {
         jblEditar = new javax.swing.JLabel();
         panelGuardar = new javax.swing.JPanel();
         jblGuardar = new javax.swing.JLabel();
+        panelOferta = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -91,24 +104,46 @@ public class Administradores extends javax.swing.JFrame {
         background.setBackground(new java.awt.Color(252, 247, 215));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panel.setBackground(new java.awt.Color(247, 240, 194));
-        panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelOpciones.setBackground(new java.awt.Color(252, 247, 215));
+        panelOpciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jblPerfil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jblPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/perfilNegro128px.png"))); // NOI18N
-        panel.add(jblPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 130, 130));
+        panelOpciones.add(jblPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 130, 130));
 
         jblNombrePerfil.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         jblNombrePerfil.setForeground(new java.awt.Color(51, 51, 51));
         jblNombrePerfil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jblNombrePerfil.setText("Nombre");
-        panel.add(jblNombrePerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 300, -1));
+        panelOpciones.add(jblNombrePerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 300, -1));
 
-        panelConfig.setBackground(new java.awt.Color(204, 212, 152));
+        panelSalir.setBackground(new java.awt.Color(247, 240, 194));
+        panelSalir.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jblSalir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jblSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salida32px.png"))); // NOI18N
+        jblSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jblSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jblSalirMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jblSalirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jblSalirMouseExited(evt);
+            }
+        });
+        panelSalir.add(jblSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+
+        panelOpciones.add(panelSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 50));
+
+        panelConfig.setBackground(new java.awt.Color(247, 240, 194));
         panelConfig.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jblConfig.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jblConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/config32px.png"))); // NOI18N
+        jblConfig.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jblConfig.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jblConfigMouseClicked(evt);
@@ -122,11 +157,11 @@ public class Administradores extends javax.swing.JFrame {
         });
         panelConfig.add(jblConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
-        panel.add(panelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 50, 50));
+        panelOpciones.add(panelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 50, 50));
 
         jblFondoPerfil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jblFondoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gradientePanel.jpg"))); // NOI18N
-        panel.add(jblFondoPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 200));
+        jblFondoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/CuadroFondoPerfil2.png"))); // NOI18N
+        panelOpciones.add(jblFondoPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 200));
 
         panelDashboard.setBackground(new java.awt.Color(252, 247, 215));
         panelDashboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -150,51 +185,72 @@ public class Administradores extends javax.swing.JFrame {
         });
         panelDashboard.add(jblDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 60));
 
-        panel.add(panelDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 300, 60));
+        panelOpciones.add(panelDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 300, 60));
 
-        panelDepositar.setBackground(new java.awt.Color(252, 247, 215));
-        panelDepositar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelRetirar.setBackground(new java.awt.Color(252, 247, 215));
+        panelRetirar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jblDepositar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jblDepositar.setForeground(new java.awt.Color(102, 102, 102));
-        jblDepositar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jblDepositar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/depositar32px.png"))); // NOI18N
-        jblDepositar.setText(" Depositar     ");
-        jblDepositar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jblDepositar.addMouseListener(new java.awt.event.MouseAdapter() {
+        jblRetirar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jblRetirar.setForeground(new java.awt.Color(102, 102, 102));
+        jblRetirar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jblRetirar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/depositar32px.png"))); // NOI18N
+        jblRetirar.setText("  Retirar          ");
+        jblRetirar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jblRetirar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jblDepositarMouseClicked(evt);
+                jblRetirarMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jblDepositarMouseEntered(evt);
+                jblRetirarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jblDepositarMouseExited(evt);
+                jblRetirarMouseExited(evt);
             }
         });
-        panelDepositar.add(jblDepositar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 60));
+        panelRetirar.add(jblRetirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 60));
 
-        panel.add(panelDepositar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 300, 60));
+        panelOpciones.add(panelRetirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 300, 60));
 
-        background.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 720));
+        background.add(panelOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 720));
 
         iconBarra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         iconBarra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bambuLogo32px.png"))); // NOI18N
-        background.add(iconBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, 60));
+        background.add(iconBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, 70));
 
         jblVentanaActual.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jblVentanaActual.setForeground(new java.awt.Color(51, 51, 51));
         jblVentanaActual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ubicacion32px.png"))); // NOI18N
         jblVentanaActual.setText("Ubicacion");
-        background.add(jblVentanaActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 400, 60));
+        background.add(jblVentanaActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 320, 70));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setText("BNBUU");
-        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 120, 60));
+        jblNombreBanco.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jblNombreBanco.setForeground(new java.awt.Color(51, 51, 51));
+        jblNombreBanco.setText("BNBUU");
+        background.add(jblNombreBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 120, 70));
 
-        jblBarra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BarraBambuColor.png"))); // NOI18N
-        background.add(jblBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 790, 60));
+        panelAtras.setBackground(new java.awt.Color(210, 196, 103));
+        panelAtras.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jblAtras.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jblAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/atras.png"))); // NOI18N
+        jblAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jblAtras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jblAtrasMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jblAtrasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jblAtrasMouseExited(evt);
+            }
+        });
+        panelAtras.add(jblAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+
+        background.add(panelAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 10, 50, 50));
+
+        jblBarra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BarraColorBambu.png"))); // NOI18N
+        background.add(jblBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 790, 70));
 
         tbdPizarra.setBackground(new java.awt.Color(252, 247, 215));
         tbdPizarra.setForeground(new java.awt.Color(204, 204, 204));
@@ -204,34 +260,70 @@ public class Administradores extends javax.swing.JFrame {
         panelDashboardOp.setToolTipText("");
         panelDashboardOp.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jblVer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ojoAbierto.png"))); // NOI18N
-        panelDashboardOp.add(jblVer, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, -1, -1));
-
         panelInfoSorteo.setBackground(new java.awt.Color(252, 247, 215));
         panelInfoSorteo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jblMasInfo.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jblMasInfo.setForeground(new java.awt.Color(102, 102, 102));
-        jblMasInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jblMasInfo.setText("Mas info");
-        jblMasInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jblMasInfo.addMouseListener(new java.awt.event.MouseAdapter() {
+        jblMasInfo1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jblMasInfo1.setForeground(new java.awt.Color(102, 102, 102));
+        jblMasInfo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jblMasInfo1.setText("Mas info");
+        jblMasInfo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jblMasInfo1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jblMasInfoMouseClicked(evt);
+                jblMasInfo1MouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jblMasInfoMouseEntered(evt);
+                jblMasInfo1MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jblMasInfoMouseExited(evt);
+                jblMasInfo1MouseExited(evt);
             }
         });
-        panelInfoSorteo.add(jblMasInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 40));
+        panelInfoSorteo.add(jblMasInfo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 40));
 
-        panelDashboardOp.add(panelInfoSorteo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 100, 40));
+        panelDashboardOp.add(panelInfoSorteo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 540, 100, 40));
 
-        jblMarco1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/MarcoAnunciosBorde.png"))); // NOI18N
-        panelDashboardOp.add(jblMarco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
+        panelInfo2.setBackground(new java.awt.Color(252, 247, 215));
+
+        jblMasInfo2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jblMasInfo2.setForeground(new java.awt.Color(102, 102, 102));
+        jblMasInfo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jblMasInfo2.setText("Mas info");
+        jblMasInfo2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jblMasInfo2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jblMasInfo2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jblMasInfo2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jblMasInfo2MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelInfo2Layout = new javax.swing.GroupLayout(panelInfo2);
+        panelInfo2.setLayout(panelInfo2Layout);
+        panelInfo2Layout.setHorizontalGroup(
+            panelInfo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInfo2Layout.createSequentialGroup()
+                .addComponent(jblMasInfo2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        panelInfo2Layout.setVerticalGroup(
+            panelInfo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelInfo2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jblMasInfo2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        panelDashboardOp.add(panelInfo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 540, 100, 40));
+
+        jblMarcoInformativo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/MarcoAnunciosBorde.png"))); // NOI18N
+        panelDashboardOp.add(jblMarcoInformativo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, -1, -1));
+
+        jblMarcoInformativo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/MarcoAnunciosBorde.png"))); // NOI18N
+        panelDashboardOp.add(jblMarcoInformativo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
 
         tbdPizarra.addTab("Dashboard", panelDashboardOp);
 
@@ -419,7 +511,11 @@ public class Administradores extends javax.swing.JFrame {
 
         panelConfigOp.add(panelGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, 130, 60));
 
-        tbdPizarra.addTab("tab4", panelConfigOp);
+        tbdPizarra.addTab("Config", panelConfigOp);
+
+        panelOferta.setBackground(new java.awt.Color(255, 255, 255));
+        panelOferta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        tbdPizarra.addTab("Info2", panelOferta);
 
         background.add(tbdPizarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 790, 700));
 
@@ -442,51 +538,73 @@ public class Administradores extends javax.swing.JFrame {
     }//GEN-LAST:event_jblDashboardMouseEntered
 
     private void jblDashboardMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblDashboardMouseExited
-        panelDashboard.setBackground(new Color(252, 247, 215));
+        if(dashboardClickedNow == false)
+            panelDashboard.setBackground(new Color(252, 247, 215));
     }//GEN-LAST:event_jblDashboardMouseExited
 
-    private void jblDepositarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblDepositarMouseEntered
-        panelDepositar.setBackground(new Color(232, 225, 182));
-    }//GEN-LAST:event_jblDepositarMouseEntered
+    private void jblRetirarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblRetirarMouseEntered
+        panelRetirar.setBackground(new Color(232, 225, 182));
+    }//GEN-LAST:event_jblRetirarMouseEntered
 
-    private void jblDepositarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblDepositarMouseExited
-        panelDepositar.setBackground(new Color(252, 247, 215));
-    }//GEN-LAST:event_jblDepositarMouseExited
+    private void jblRetirarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblRetirarMouseExited
+        if(retirarClickedNow == false)
+            panelRetirar.setBackground(new Color(252, 247, 215));
+    }//GEN-LAST:event_jblRetirarMouseExited
 
-    private void jblMasInfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblMasInfoMouseEntered
-        panelInfoSorteo.setBackground(new Color(247, 240, 194));
-    }//GEN-LAST:event_jblMasInfoMouseEntered
+    private void jblMasInfo1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblMasInfo1MouseEntered
+        panelInfoSorteo.setBackground(new Color(232, 225, 182));
+    }//GEN-LAST:event_jblMasInfo1MouseEntered
 
-    private void jblMasInfoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblMasInfoMouseExited
+    private void jblMasInfo1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblMasInfo1MouseExited
         panelInfoSorteo.setBackground(new Color(252, 247, 215));
-    }//GEN-LAST:event_jblMasInfoMouseExited
+    }//GEN-LAST:event_jblMasInfo1MouseExited
 
     private void jblDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblDashboardMouseClicked
+        //Actualizamos el estado de la ventana clickeada.
+        dashboardClickedNow = true;
+        retirarClickedNow = false;
+        //Mostramos el panel correxpondiente
         tbdPizarra.setSelectedIndex(0);
         jblVentanaActual.setText("Dashboard");
+        //Establecemos el color de la ventana que esta seleccionada.
+        panelDashboard.setBackground(new Color(232, 225, 182));
+        panelRetirar.setBackground(new Color(252, 247, 215));
     }//GEN-LAST:event_jblDashboardMouseClicked
 
-    private void jblDepositarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblDepositarMouseClicked
+    private void jblRetirarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblRetirarMouseClicked
+        //Actualizamos el estado de la ventana clickeada.
+        retirarClickedNow = true;
+        dashboardClickedNow = false;
+        //Mostramos el panel correxpondiente
         tbdPizarra.setSelectedIndex(1);
-        jblVentanaActual.setText("Depositar");
-    }//GEN-LAST:event_jblDepositarMouseClicked
+        jblVentanaActual.setText("Retirar");
+        //Establecemos el color de la ventana que esta seleccionada.
+        panelRetirar.setBackground(new Color(232, 225, 182));
+        panelDashboard.setBackground(new Color(252, 247, 215));
+    }//GEN-LAST:event_jblRetirarMouseClicked
 
-    private void jblMasInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblMasInfoMouseClicked
+    private void jblMasInfo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblMasInfo1MouseClicked
         tbdPizarra.setSelectedIndex(2);
         jblVentanaActual.setText("Sorteo");
-    }//GEN-LAST:event_jblMasInfoMouseClicked
+    }//GEN-LAST:event_jblMasInfo1MouseClicked
 
     private void jblConfigMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblConfigMouseEntered
-        panelConfig.setBackground(new Color(215, 227, 141));
+        panelConfig.setBackground(new Color(255,255,218));
+        //255,248,200
     }//GEN-LAST:event_jblConfigMouseEntered
 
     private void jblConfigMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblConfigMouseExited
-        panelConfig.setBackground(new Color(204, 212, 152));
+        panelConfig.setBackground(new Color(247,240,194));
     }//GEN-LAST:event_jblConfigMouseExited
 
     private void jblConfigMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblConfigMouseClicked
         tbdPizarra.setSelectedIndex(3);
         jblVentanaActual.setText("Configuracion");
+        dashboardClickedNow = false;
+        retirarClickedNow = false;
+        panelRetirar.setBackground(new Color(252,247,215));
+        panelDashboard.setBackground(new Color(252,247,215));
+        
         try {
             txtName.setText(Datos.getAtributeInIndex(indice, "nombre"));
             txtApellido.setText(Datos.getAtributeInIndex(indice, "apellido"));
@@ -546,6 +664,7 @@ public class Administradores extends javax.swing.JFrame {
     }//GEN-LAST:event_jblEditarMouseExited
 
     private void jblEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblEditarMouseClicked
+        
         txtName.setEditable(true);
         txtApellido.setEditable(true);
         txtCedula.setEditable(true);
@@ -587,6 +706,72 @@ public class Administradores extends javax.swing.JFrame {
         psdPassword.setEditable(false);
     }//GEN-LAST:event_jblGuardarMouseClicked
 
+    private void jblMasInfo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblMasInfo2MouseClicked
+        tbdPizarra.setSelectedIndex(4);
+        jblVentanaActual.setText("Informativo 2");
+    }//GEN-LAST:event_jblMasInfo2MouseClicked
+
+    private void jblMasInfo2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblMasInfo2MouseEntered
+        panelInfo2.setBackground(new Color(232, 225, 182));
+    }//GEN-LAST:event_jblMasInfo2MouseEntered
+
+    private void jblMasInfo2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblMasInfo2MouseExited
+        panelInfo2.setBackground(new Color(252, 247, 215));
+    }//GEN-LAST:event_jblMasInfo2MouseExited
+
+    private void jblSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblSalirMouseEntered
+        panelSalir.setBackground(new Color(255,255,218));
+    }//GEN-LAST:event_jblSalirMouseEntered
+
+    private void jblSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblSalirMouseExited
+        panelSalir.setBackground(new Color(247,240,194));
+    }//GEN-LAST:event_jblSalirMouseExited
+
+    private void jblSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblSalirMouseClicked
+        Inicio inicio = new Inicio();
+        inicio.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jblSalirMouseClicked
+
+    private void jblAtrasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblAtrasMouseEntered
+        panelAtras.setBackground(new Color(245,228,120));
+    }//GEN-LAST:event_jblAtrasMouseEntered
+
+    private void jblAtrasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblAtrasMouseExited
+        panelAtras.setBackground(new Color(210,196,103));
+    }//GEN-LAST:event_jblAtrasMouseExited
+
+    private void jblAtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblAtrasMouseClicked
+        panelDashboard.setBackground(new Color(232, 225, 182));
+        switch (jblVentanaActual.getText()) {
+            case "Dashboard" ->{
+                JOptionPane.showMessageDialog(null, "Para ir a inicio pulsa el icono izquierdo del perfil");
+            }
+            case "Retirar" ->{
+                tbdPizarra.setSelectedIndex(0);
+                jblVentanaActual.setText("Dashboard");
+                retirarClickedNow = false;
+                dashboardClickedNow = true;
+                panelRetirar.setBackground(new Color(252, 247, 215));
+            }
+            case "Configuracion" ->{
+                tbdPizarra.setSelectedIndex(0);
+                jblVentanaActual.setText("Dashboard");
+                dashboardClickedNow = true;
+            }
+            case "Sorteo" ->{
+                tbdPizarra.setSelectedIndex(0);
+                jblVentanaActual.setText("Dashboard");
+                dashboardClickedNow = true;
+            }
+            case "Informativo 2" ->{
+                tbdPizarra.setSelectedIndex(0);
+                jblVentanaActual.setText("Dashboard");
+                dashboardClickedNow = true;
+            }
+        }
+    }//GEN-LAST:event_jblAtrasMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -613,7 +798,7 @@ public class Administradores extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Administradores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+ 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -625,7 +810,6 @@ public class Administradores extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
     private javax.swing.JLabel iconBarra;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
@@ -633,35 +817,43 @@ public class Administradores extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel jblApellido;
+    private javax.swing.JLabel jblAtras;
     private javax.swing.JLabel jblBarra;
     private javax.swing.JLabel jblCedula;
     private javax.swing.JLabel jblConfig;
     private javax.swing.JLabel jblDashboard;
-    private javax.swing.JLabel jblDepositar;
     private javax.swing.JLabel jblEditar;
     private javax.swing.JLabel jblFondoPerfil;
     private javax.swing.JLabel jblGuardar;
-    private javax.swing.JLabel jblMarco1;
-    private javax.swing.JLabel jblMasInfo;
+    private javax.swing.JLabel jblMarcoInformativo1;
+    private javax.swing.JLabel jblMarcoInformativo2;
+    private javax.swing.JLabel jblMasInfo1;
+    private javax.swing.JLabel jblMasInfo2;
     private javax.swing.JLabel jblName;
+    private javax.swing.JLabel jblNombreBanco;
     private javax.swing.JLabel jblNombrePerfil;
     private javax.swing.JLabel jblPassword;
     private javax.swing.JLabel jblPerfil;
+    private javax.swing.JLabel jblRetirar;
+    private javax.swing.JLabel jblSalir;
     private javax.swing.JLabel jblTelefono;
     private javax.swing.JLabel jblVentanaActual;
-    private javax.swing.JLabel jblVer;
     private javax.swing.JLabel jblVerPass;
-    private javax.swing.JPanel panel;
+    private javax.swing.JPanel panelAtras;
     private javax.swing.JPanel panelConfig;
     private javax.swing.JPanel panelConfigOp;
     private javax.swing.JPanel panelDashboard;
     private javax.swing.JPanel panelDashboardOp;
-    private javax.swing.JPanel panelDepositar;
     private javax.swing.JPanel panelDepositarOp;
     private javax.swing.JPanel panelEditDatos;
     private javax.swing.JPanel panelEditar;
     private javax.swing.JPanel panelGuardar;
+    private javax.swing.JPanel panelInfo2;
     private javax.swing.JPanel panelInfoSorteo;
+    private javax.swing.JPanel panelOferta;
+    private javax.swing.JPanel panelOpciones;
+    private javax.swing.JPanel panelRetirar;
+    private javax.swing.JPanel panelSalir;
     private javax.swing.JPanel panelSorteo;
     private javax.swing.JPanel panelVerPass;
     private javax.swing.JPasswordField psdPassword;
