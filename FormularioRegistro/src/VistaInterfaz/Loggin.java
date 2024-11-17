@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 public class Loggin extends javax.swing.JFrame {
 
     private int index;
+    boolean verPassword = false;
 
     public Loggin() {
         initComponents();
@@ -51,6 +52,8 @@ public class Loggin extends javax.swing.JFrame {
         jblIniciarSesion = new javax.swing.JLabel();
         panelnAtras = new javax.swing.JPanel();
         jblAtras = new javax.swing.JLabel();
+        panelVerPassword = new javax.swing.JPanel();
+        jblVerPassword = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -125,7 +128,7 @@ public class Loggin extends javax.swing.JFrame {
                 psdPasswordActionPerformed(evt);
             }
         });
-        backgound.add(psdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 420, 60));
+        backgound.add(psdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 380, 60));
 
         jSeparator1.setForeground(new java.awt.Color(51, 51, 51));
         backgound.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 530, 10));
@@ -208,6 +211,26 @@ public class Loggin extends javax.swing.JFrame {
         );
 
         backgound.add(panelnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        panelVerPassword.setBackground(new java.awt.Color(255, 255, 255));
+        panelVerPassword.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jblVerPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jblVerPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ojoCerrado.png"))); // NOI18N
+        jblVerPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jblVerPasswordMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jblVerPasswordMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jblVerPasswordMouseExited(evt);
+            }
+        });
+        panelVerPassword.add(jblVerPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
+
+        backgound.add(panelVerPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 470, 40, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -337,6 +360,26 @@ public class Loggin extends javax.swing.JFrame {
         psdPassword.setForeground(new Color(155, 155, 155));
     }//GEN-LAST:event_txtUsuarioMousePressed
 
+    private void jblVerPasswordMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblVerPasswordMouseEntered
+        panelVerPassword.setBackground(new Color(204, 204, 204));
+    }//GEN-LAST:event_jblVerPasswordMouseEntered
+
+    private void jblVerPasswordMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblVerPasswordMouseExited
+        panelVerPassword.setBackground(Color.white);
+    }//GEN-LAST:event_jblVerPasswordMouseExited
+
+    private void jblVerPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblVerPasswordMouseClicked
+        if (verPassword == false) {
+            verPassword = true;
+            jblVerPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ojoAbierto.png")));
+            psdPassword.setEchoChar((char) 0);
+        } else {
+            verPassword = false;
+            jblVerPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ojoCerrado.png")));
+            psdPassword.setEchoChar('*');
+        }
+    }//GEN-LAST:event_jblVerPasswordMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -386,7 +429,9 @@ public class Loggin extends javax.swing.JFrame {
     private javax.swing.JLabel jblNombreBanco;
     private javax.swing.JLabel jblPassword;
     private javax.swing.JLabel jblUsuario;
+    private javax.swing.JLabel jblVerPassword;
     private javax.swing.JPanel panelEntrar;
+    private javax.swing.JPanel panelVerPassword;
     private javax.swing.JPanel panelnAtras;
     private javax.swing.JPasswordField psdPassword;
     private javax.swing.JTextField txtUsuario;
