@@ -6,10 +6,7 @@ import Modelos.Personas;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Charly Cimino
- */
+
 public class Registro extends javax.swing.JFrame {
 
     DefaultTableModel modelo;
@@ -291,7 +288,7 @@ public class Registro extends javax.swing.JFrame {
             String apellido = txtApellido.getText();
             String telefono = txtTelefono.getText();
             String cedula = txtCedula.getText();
-            String password = psdPassword.getText();
+            String password = String.valueOf(psdPassword.getPassword());
             int rol = cbxRol.getSelectedIndex();
 
             Personas p = new Personas(nombre,apellido,telefono,cedula,password,rol);

@@ -6,14 +6,10 @@ import Modelos.Personas;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Charly Cimino
- */
+
 public class Loggin extends javax.swing.JFrame {
 
-    int xMouse;
-    int yMouse;
+    private int index;
 
     public Loggin() {
         initComponents();
@@ -25,8 +21,10 @@ public class Loggin extends javax.swing.JFrame {
         txtUsuario.setText("Ingrese su usuario");
         psdPassword.setText("**********");
     }
-    
 
+    public int getIndex(){
+        return index;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -269,6 +267,8 @@ public class Loggin extends javax.swing.JFrame {
                 for (Personas p : Datos.listaPersonas) {
                     if (p.getNombre().equals(usuario) && p.getPassword().equals(password)) {
                         CredencialesIguales = true;
+                        index = Datos.listaPersonas.indexOf(p);
+                        Datos.setIndiceLogin(index);
                         rol = p.getRol();
                     }
                 }
@@ -285,12 +285,16 @@ public class Loggin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Datos correctos");
             switch (rol) {
                 case 0 -> {
+                    Datos.setIndiceLogin(index);
                     this.dispose();
-                    Datos.getAdmins().setVisible(true);
+                    Administradores admins = new Administradores();
+                    admins.setVisible(true);
                 }
                 case 1 -> {
+                    Datos.setIndiceLogin(index);
                     this.dispose();
-                    Datos.getUsers().setVisible(true);
+                    Administradores admins = new Administradores();
+                    admins.setVisible(true);
                 }
             }
         }else if (PersonasRegistradas > 0 && CredencialesIguales == false){
