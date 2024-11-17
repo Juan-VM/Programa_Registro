@@ -1,6 +1,8 @@
 
 package Modelos;
 
+import java.util.ArrayList;
+
 
 public class Personas {
     private String nombre;
@@ -9,6 +11,7 @@ public class Personas {
     private String cedula;
     private int rol;
     private String password;
+    private int indiceLogin;
 
     public Personas(String nombre, String apellido, String telefono, String cedula, String password, int rol) {
         this.nombre = nombre;
@@ -68,6 +71,14 @@ public class Personas {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getIndiceLogin() {
+        return indiceLogin;
+    }
+
+    public void setIndiceLogin(int indiceLogin) {
+        this.indiceLogin = indiceLogin;
     }
     
     
