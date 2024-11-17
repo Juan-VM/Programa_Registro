@@ -185,7 +185,7 @@ public class Administradores extends javax.swing.JFrame {
         jblVentanaActual.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jblVentanaActual.setForeground(new java.awt.Color(51, 51, 51));
         jblVentanaActual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ubicacion32px.png"))); // NOI18N
-        jblVentanaActual.setText("Dashboard");
+        jblVentanaActual.setText("Ubicacion");
         background.add(jblVentanaActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 400, 60));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
