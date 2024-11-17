@@ -14,6 +14,7 @@ public class Administradores extends javax.swing.JFrame {
     public Administradores() {
         initComponents();
         this.setLocationRelativeTo(null);
+        jblVentanaActual.setText("Dashboard");
         try {
             if (Datos.getAtributeInIndex(indice, "nombre").equals("")) {
                 jblNombrePerfil.setText("Usuario");
@@ -48,6 +49,7 @@ public class Administradores extends javax.swing.JFrame {
         panelDepositar = new javax.swing.JPanel();
         jblDepositar = new javax.swing.JLabel();
         iconBarra = new javax.swing.JLabel();
+        jblVentanaActual = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jblBarra = new javax.swing.JLabel();
         tbdPizarra = new javax.swing.JTabbedPane();
@@ -180,10 +182,16 @@ public class Administradores extends javax.swing.JFrame {
         iconBarra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bambuLogo32px.png"))); // NOI18N
         background.add(iconBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, 60));
 
+        jblVentanaActual.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jblVentanaActual.setForeground(new java.awt.Color(51, 51, 51));
+        jblVentanaActual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ubicacion32px.png"))); // NOI18N
+        jblVentanaActual.setText("Dashboard");
+        background.add(jblVentanaActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 400, 60));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("BNBUU");
-        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 340, 60));
+        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 120, 60));
 
         jblBarra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BarraBambuColor.png"))); // NOI18N
         background.add(jblBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 790, 60));
@@ -455,14 +463,17 @@ public class Administradores extends javax.swing.JFrame {
 
     private void jblDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblDashboardMouseClicked
         tbdPizarra.setSelectedIndex(0);
+        jblVentanaActual.setText("Dashboard");
     }//GEN-LAST:event_jblDashboardMouseClicked
 
     private void jblDepositarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblDepositarMouseClicked
         tbdPizarra.setSelectedIndex(1);
+        jblVentanaActual.setText("Depositar");
     }//GEN-LAST:event_jblDepositarMouseClicked
 
     private void jblMasInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblMasInfoMouseClicked
         tbdPizarra.setSelectedIndex(2);
+        jblVentanaActual.setText("Sorteo");
     }//GEN-LAST:event_jblMasInfoMouseClicked
 
     private void jblConfigMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblConfigMouseEntered
@@ -475,6 +486,7 @@ public class Administradores extends javax.swing.JFrame {
 
     private void jblConfigMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblConfigMouseClicked
         tbdPizarra.setSelectedIndex(3);
+        jblVentanaActual.setText("Configuracion");
         try {
             txtName.setText(Datos.getAtributeInIndex(indice, "nombre"));
             txtApellido.setText(Datos.getAtributeInIndex(indice, "apellido"));
@@ -636,6 +648,7 @@ public class Administradores extends javax.swing.JFrame {
     private javax.swing.JLabel jblPassword;
     private javax.swing.JLabel jblPerfil;
     private javax.swing.JLabel jblTelefono;
+    private javax.swing.JLabel jblVentanaActual;
     private javax.swing.JLabel jblVer;
     private javax.swing.JLabel jblVerPass;
     private javax.swing.JPanel panel;
