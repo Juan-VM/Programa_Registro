@@ -13,6 +13,7 @@ import javax.swing.table.DefaultTableModel;
 public class Inicio extends javax.swing.JFrame {
 
     boolean verPassword = false;
+    boolean verPasswordRegistro = false;
     private int index;
 
     DefaultTableModel modelo;
@@ -195,6 +196,8 @@ public class Inicio extends javax.swing.JFrame {
         jblIniciarSesion1 = new javax.swing.JLabel();
         panelGuardarOF = new javax.swing.JPanel();
         jblGuardarOF = new javax.swing.JLabel();
+        panelVerRegistro = new javax.swing.JPanel();
+        lblVerRegistro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -750,7 +753,7 @@ public class Inicio extends javax.swing.JFrame {
                 psdPasswordOFMousePressed(evt);
             }
         });
-        panelRegistro.add(psdPasswordOF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 370, 50));
+        panelRegistro.add(psdPasswordOF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 320, 50));
 
         sep5.setForeground(new java.awt.Color(102, 102, 102));
         panelRegistro.add(sep5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 620, 10));
@@ -804,6 +807,27 @@ public class Inicio extends javax.swing.JFrame {
         panelGuardarOF.add(jblGuardarOF, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 60));
 
         panelRegistro.add(panelGuardarOF, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 570, 150, 60));
+
+        panelVerRegistro.setBackground(new java.awt.Color(255, 255, 255));
+        panelVerRegistro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblVerRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblVerRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ojoCerrado.png"))); // NOI18N
+        lblVerRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblVerRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblVerRegistroMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblVerRegistroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblVerRegistroMouseExited(evt);
+            }
+        });
+        panelVerRegistro.add(lblVerRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
+
+        panelRegistro.add(panelVerRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, 40, 40));
 
         tbpVentanas.addTab("tab4", panelRegistro);
 
@@ -983,6 +1007,10 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jblRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblRegistroMouseClicked
         tbpVentanas.setSelectedIndex(3);
+        verPasswordRegistro = false;
+        lblVerRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ojoCerrado.png")));
+        psdPasswordOF.setEchoChar('*');
+        
         for (Personas p : Datos.getListaPersonas()) {
             modelo.addRow(new Object[]{p.getNombre(), p.getApellido(), p.getTelefono(), p.getCedula(), p.getPassword()}
             );
@@ -1117,6 +1145,26 @@ public class Inicio extends javax.swing.JFrame {
         panelAtrasInicio.setVisible(false);
     }//GEN-LAST:event_jblAtrasInicioMouseClicked
 
+    private void lblVerRegistroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVerRegistroMouseEntered
+        panelVerRegistro.setBackground(new Color(204, 204, 204));
+    }//GEN-LAST:event_lblVerRegistroMouseEntered
+
+    private void lblVerRegistroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVerRegistroMouseExited
+        panelVerRegistro.setBackground(Color.white);
+    }//GEN-LAST:event_lblVerRegistroMouseExited
+
+    private void lblVerRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVerRegistroMouseClicked
+        if (verPasswordRegistro == false) {
+            verPasswordRegistro = true;
+            lblVerRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ojoAbierto.png")));
+            psdPasswordOF.setEchoChar((char) 0);
+        } else {
+            verPasswordRegistro = false;
+            lblVerRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ojoCerrado.png")));
+            psdPasswordOF.setEchoChar('*');
+        }
+    }//GEN-LAST:event_lblVerRegistroMouseClicked
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1202,6 +1250,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jblVerPassword;
     private javax.swing.JLabel lblBarraBanner;
     private javax.swing.JLabel lblFondoInicio;
+    private javax.swing.JLabel lblVerRegistro;
     private javax.swing.JPanel panelAtrasInicio;
     private javax.swing.JPanel panelEntrar;
     private javax.swing.JPanel panelGuardarOF;
@@ -1212,6 +1261,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel panelRegistroPrueba;
     private javax.swing.JPanel panelRegistroUsuario;
     private javax.swing.JPanel panelVerPassword;
+    private javax.swing.JPanel panelVerRegistro;
     private javax.swing.JPanel panelnAtras;
     private javax.swing.JPasswordField psdPassword;
     private javax.swing.JPasswordField psdPasswordOF;
