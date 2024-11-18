@@ -20,6 +20,8 @@ public class Administradores extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         jblVentanaActual.setText("Dashboard");
+        panelDashboard.setBackground(new Color(232, 225, 182));
+        dashboardClickedNow = true;
         try {
             if (Datos.getAtributeInIndex(indice, "nombre").equals("")) {
                 jblNombrePerfil.setText("Usuario");
@@ -109,7 +111,7 @@ public class Administradores extends javax.swing.JFrame {
 
         jblPerfil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jblPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/perfilNegro128px.png"))); // NOI18N
-        panelOpciones.add(jblPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 130, 130));
+        panelOpciones.add(jblPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 130, 130));
 
         jblNombrePerfil.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         jblNombrePerfil.setForeground(new java.awt.Color(51, 51, 51));
@@ -728,9 +730,9 @@ public class Administradores extends javax.swing.JFrame {
     }//GEN-LAST:event_jblSalirMouseExited
 
     private void jblSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblSalirMouseClicked
+        this.dispose();
         Inicio inicio = new Inicio();
         inicio.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jblSalirMouseClicked
 
     private void jblAtrasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblAtrasMouseEntered

@@ -35,7 +35,7 @@ public class Loggin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        backgound = new javax.swing.JPanel();
+        background = new javax.swing.JPanel();
         jblLogo = new javax.swing.JLabel();
         jblNombreBanco = new javax.swing.JLabel();
         jblFrase = new javax.swing.JLabel();
@@ -58,43 +58,43 @@ public class Loggin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        backgound.setBackground(new java.awt.Color(255, 255, 255));
-        backgound.addFocusListener(new java.awt.event.FocusAdapter() {
+        background.setBackground(new java.awt.Color(255, 255, 255));
+        background.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                backgoundFocusGained(evt);
+                backgroundFocusGained(evt);
             }
         });
-        backgound.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bambuLogo128px.png"))); // NOI18N
-        backgound.add(jblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 220, 390, 130));
+        background.add(jblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 220, 390, 130));
 
         jblNombreBanco.setFont(new java.awt.Font("STSong", 1, 36)); // NOI18N
         jblNombreBanco.setForeground(new java.awt.Color(51, 51, 51));
         jblNombreBanco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jblNombreBanco.setText("BNBUU");
-        backgound.add(jblNombreBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 390, 390, -1));
+        background.add(jblNombreBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 390, 390, -1));
 
         jblFrase.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jblFrase.setForeground(new java.awt.Color(51, 51, 51));
         jblFrase.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jblFrase.setText("Deje que su dinero brote con nosotros");
-        backgound.add(jblFrase, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 460, 390, -1));
+        background.add(jblFrase, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 460, 390, -1));
 
         jblFondoPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondo.jpg"))); // NOI18N
-        backgound.add(jblFondoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, -10, 390, 690));
+        background.add(jblFondoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, -10, 390, 690));
 
         jLabel1.setFont(new java.awt.Font("STSong", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bambuLogo64px.png"))); // NOI18N
         jLabel1.setText("BNBUU");
-        backgound.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 205, -1));
+        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 205, -1));
 
         jblPassword.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
         jblPassword.setForeground(new java.awt.Color(51, 51, 51));
         jblPassword.setText("PASSWORD");
-        backgound.add(jblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, -1, -1));
+        background.add(jblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, -1, -1));
 
         txtUsuario.setBackground(new java.awt.Color(255, 255, 255));
         txtUsuario.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -106,12 +106,12 @@ public class Loggin extends javax.swing.JFrame {
                 txtUsuarioMousePressed(evt);
             }
         });
-        backgound.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 420, 50));
+        background.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 420, 50));
 
         jblUsuario.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
         jblUsuario.setForeground(new java.awt.Color(51, 51, 51));
         jblUsuario.setText("USUARIO");
-        backgound.add(jblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
+        background.add(jblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
 
         psdPassword.setBackground(new java.awt.Color(255, 255, 255));
         psdPassword.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -123,15 +123,10 @@ public class Loggin extends javax.swing.JFrame {
                 psdPasswordMousePressed(evt);
             }
         });
-        psdPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                psdPasswordActionPerformed(evt);
-            }
-        });
-        backgound.add(psdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 380, 60));
+        background.add(psdPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 380, 60));
 
         jSeparator1.setForeground(new java.awt.Color(51, 51, 51));
-        backgound.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 530, 10));
+        background.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 530, 10));
 
         panelEntrar.setBackground(new java.awt.Color(92, 88, 29));
 
@@ -168,15 +163,15 @@ public class Loggin extends javax.swing.JFrame {
                 .addComponent(jblEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        backgound.add(panelEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 570, -1, -1));
+        background.add(panelEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 570, -1, -1));
 
         jSeparator2.setForeground(new java.awt.Color(51, 51, 51));
-        backgound.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 530, 10));
+        background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 530, 10));
 
         jblIniciarSesion.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
         jblIniciarSesion.setForeground(new java.awt.Color(51, 51, 51));
         jblIniciarSesion.setText("INICIAR SESION");
-        backgound.add(jblIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
+        background.add(jblIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
         panelnAtras.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -210,7 +205,7 @@ public class Loggin extends javax.swing.JFrame {
                 .addComponent(jblAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        backgound.add(panelnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        background.add(panelnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         panelVerPassword.setBackground(new java.awt.Color(255, 255, 255));
         panelVerPassword.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -230,25 +225,25 @@ public class Loggin extends javax.swing.JFrame {
         });
         panelVerPassword.add(jblVerPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
 
-        backgound.add(panelVerPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 470, 40, 40));
+        background.add(panelVerPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 470, 40, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(backgound, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(backgound, javax.swing.GroupLayout.PREFERRED_SIZE, 668, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 668, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backgoundFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_backgoundFocusGained
+    private void backgroundFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_backgroundFocusGained
         //nada
-    }//GEN-LAST:event_backgoundFocusGained
+    }//GEN-LAST:event_backgroundFocusGained
 
     private void jblAtrasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblAtrasMouseExited
         panelnAtras.setBackground(Color.white);
@@ -260,7 +255,8 @@ public class Loggin extends javax.swing.JFrame {
 
     private void jblAtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblAtrasMouseClicked
         this.dispose();
-        Datos.getStart().setVisible(true);
+        Inicio inicio = new Inicio();
+        inicio.setVisible(true);
     }//GEN-LAST:event_jblAtrasMouseClicked
 
     private void jblEntrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblEntrarMouseExited
@@ -325,10 +321,6 @@ public class Loggin extends javax.swing.JFrame {
             txtsPorDefecto();
         }
     }//GEN-LAST:event_jblEntrarMouseClicked
-
-    private void psdPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_psdPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_psdPasswordActionPerformed
 
     private void psdPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_psdPasswordMousePressed
 
@@ -416,7 +408,7 @@ public class Loggin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel backgound;
+    private javax.swing.JPanel background;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
