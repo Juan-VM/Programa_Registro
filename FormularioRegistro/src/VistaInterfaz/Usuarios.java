@@ -26,223 +26,21 @@ public class Usuarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jblTituloUsuario = new javax.swing.JLabel();
-        btnAtras = new javax.swing.JButton();
-        btnVerTitulo = new javax.swing.JButton();
-        btnOcultarTitulo = new javax.swing.JButton();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        btnUserIrInicio = new javax.swing.JMenuItem();
-        btnUserIrRegistro = new javax.swing.JMenuItem();
-        btnUserIrInicioSesion = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jblTituloUsuario.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jblTituloUsuario.setText("Usuarios");
-
-        btnAtras.setBackground(new java.awt.Color(204, 204, 204));
-        btnAtras.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/atras.png"))); // NOI18N
-        btnAtras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtrasActionPerformed(evt);
-            }
-        });
-
-        btnVerTitulo.setBackground(new java.awt.Color(204, 204, 204));
-        btnVerTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnVerTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ojoAbierto.png"))); // NOI18N
-        btnVerTitulo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerTituloActionPerformed(evt);
-            }
-        });
-
-        btnOcultarTitulo.setBackground(new java.awt.Color(204, 204, 204));
-        btnOcultarTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnOcultarTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ojoCerrado.png"))); // NOI18N
-        btnOcultarTitulo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOcultarTituloActionPerformed(evt);
-            }
-        });
-
-        jTabbedPane1.setBackground(new java.awt.Color(0, 0, 0));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        jButton1.setText("jButton1");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(148, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("tab1", jPanel2);
-
-        jPanel3.setBackground(new java.awt.Color(204, 255, 255));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("jLabel1");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(138, 138, 138)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(147, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(117, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("tab2", jPanel3);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 187, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnVerTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnOcultarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(123, 123, 123))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jblTituloUsuario)
-                        .addGap(60, 60, 60))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(btnAtras)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jblTituloUsuario)
-                        .addGap(31, 31, 31)
-                        .addComponent(btnOcultarTitulo)
-                        .addGap(30, 30, 30)
-                        .addComponent(btnVerTitulo)
-                        .addGap(196, 196, 196))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(133, 133, 133))))
-        );
-
-        jMenu1.setText("Inicio");
-
-        btnUserIrInicio.setText("Ir a Inicio");
-        btnUserIrInicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUserIrInicioActionPerformed(evt);
-            }
-        });
-        jMenu1.add(btnUserIrInicio);
-
-        btnUserIrRegistro.setText("Ir a registro");
-        btnUserIrRegistro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUserIrRegistroActionPerformed(evt);
-            }
-        });
-        jMenu1.add(btnUserIrRegistro);
-
-        btnUserIrInicioSesion.setText("Ir a inicio sesion");
-        btnUserIrInicioSesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUserIrInicioSesionActionPerformed(evt);
-            }
-        });
-        jMenu1.add(btnUserIrInicioSesion);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 910, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnUserIrInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserIrInicioActionPerformed
-        Datos.getStart().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnUserIrInicioActionPerformed
-
-    private void btnUserIrRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserIrRegistroActionPerformed
-        Datos.getRegistro().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnUserIrRegistroActionPerformed
-
-    private void btnUserIrInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserIrInicioSesionActionPerformed
-        Loggin loggin = new Loggin();
-        this.dispose();
-        loggin.setVisible(true);
-    }//GEN-LAST:event_btnUserIrInicioSesionActionPerformed
-
-    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        Loggin loggin = new Loggin();
-        this.dispose();
-        loggin.setVisible(true);
-    }//GEN-LAST:event_btnAtrasActionPerformed
-
-    private void btnVerTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerTituloActionPerformed
-        jblTituloUsuario.setVisible(true);
-    }//GEN-LAST:event_btnVerTituloActionPerformed
-
-    private void btnOcultarTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOcultarTituloActionPerformed
-        jblTituloUsuario.setVisible(false);
-    }//GEN-LAST:event_btnOcultarTituloActionPerformed
 
     /**
      * @param args the command line arguments
@@ -280,21 +78,5 @@ public class Usuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAtras;
-    private javax.swing.JButton btnOcultarTitulo;
-    private javax.swing.JMenuItem btnUserIrInicio;
-    private javax.swing.JMenuItem btnUserIrInicioSesion;
-    private javax.swing.JMenuItem btnUserIrRegistro;
-    private javax.swing.JButton btnVerTitulo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JLabel jblTituloUsuario;
     // End of variables declaration//GEN-END:variables
 }

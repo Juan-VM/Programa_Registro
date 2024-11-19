@@ -13,7 +13,6 @@ public class Registro extends javax.swing.JFrame {
     public Registro() {
         initComponents();
         this.setLocationRelativeTo(this);
-        Datos.setRegistro(this);
         
         modelo = new DefaultTableModel();
         this.tablaRegistro.setModel(modelo);
